@@ -16,15 +16,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnCall=findViewById(R.id.btnCall);
-        btnCallFriend=findViewById(R.id.btnCallFriend);
-        btnMap=findViewById(R.id.btnMap);
-        btnWeb=findViewById(R.id.btnWeb);
+        btnCall = findViewById(R.id.btnCall);
+        btnCallFriend = findViewById(R.id.btnCallFriend);
+        btnMap = findViewById(R.id.btnMap);
+        btnWeb = findViewById(R.id.btnWeb);
 
         btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Intent.ACTION_DIAL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 startActivity(intent);
             }
         });
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         btnCallFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0872543225"));
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0872543225"));
                 startActivity(intent);
             }
         });
@@ -40,16 +40,17 @@ public class MainActivity extends AppCompatActivity {
         btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=Gulshan e iqbal, Karachi"));
+                startActivity(intent);
             }
         });
-
 
 
         btnWeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"));
+                startActivity(intent);
             }
         });
     }
